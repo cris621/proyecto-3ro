@@ -182,7 +182,7 @@
                     <h4>Menu</h4>
                     <a class="navbar-brand" href="{{ route('cursos.index') }}">Cursos</a>
                     <a class="navbar-brand" href="{{route ('users.index') }}">Usuarios</a>
-                    <a class="navbar-brand" href="{{ route('pagos.index') }}">Registro Pagos</a>
+                    <a class="navbar-brand" href="{{route('genera_ordenes.index') }}">Generar Ordenes</a>
 
 
 

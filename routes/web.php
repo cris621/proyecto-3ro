@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CursosController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ImportController;
+use App\Http\Controllers\GeneraOrdenesController;
 
 
 Route::post('/import', [ImportController::class, 'import'])->name('import');
@@ -39,8 +40,9 @@ Route::middleware('auth')->group(function () {
 
     Route::resource('cursos',CursosController::class);
     Route::resource('users',UsersController::class);
-    Route::view('/registro-pagos', 'registro_pagos')->name('pagos.index');
 
+
+    Route::get('/genera_ordenes',[GeneraOrdenesController::class, 'index'])->name('genera_ordenes.index');
 
 });
 
