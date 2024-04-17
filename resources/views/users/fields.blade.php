@@ -5,10 +5,6 @@
  
 <label for="rol_id" class="form-label">Elija un Rol</label>
 
-<select name="rol_id">
-@foreach($roles as $r)
-    <option value="{{$r->rol_id}}" {{ isset($user) && $user->rol?'selected':''}}>{{$r->rol_descripcion}}</option>
-@endforeach
 
 
 </select>
@@ -32,11 +28,6 @@
  <div class="cold-md-6">
  <label for="correo" class="form-label">Correo Electronico</label>
  <input type="text" name='email' class="form-control" value="{{isset($user)?$user->email:''}}">
-</div>
-
-<div class="cold-md-6">
- <label for="password" class="form-label">Contraseña</label>
- <input type="password" name='password' class="form-control">
 </div>
 
 <button type="submit" class="btn btn-success">Guardar</button>

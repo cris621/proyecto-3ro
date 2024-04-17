@@ -7,7 +7,6 @@
     <tr>
         <th>#</th>
         <th>Usuario</th>
-        <th>Rol</th>
         <th>Nombres</th>
         <th>Correo</th>
         <th></th>
@@ -16,10 +15,10 @@
     <tr>
         <td>{{$loop->iteration}}</td>
         <td>{{$u->name}}</td>
-        <td>{{$u->rol_descripcion}}</td>
-        <td>{{$u->usu_nombres   }}</td>
+        <td>{{$u->usu_nombres}}</td>
         <td>{{$u->email}}</td>
         <td> <a href="{{route('users.edit',$u->usu_id)}}" class='btn btn-info btn-sm'> Edit</a></td>
+        <td> <a href="{{route('users.cont',$u->usu_id)}}" class='btn btn-secondary btn-sm'>Edit Cont</a></td>
 
     </tr>
     @endforeach 

@@ -8,6 +8,7 @@ use App\Http\Controllers\ImportController;
 use App\Http\Controllers\GeneraOrdenesController;
 
 
+
 Route::post('/import', [ImportController::class, 'import'])->name('import');
 /*
 |--------------------------------------------------------------------------
@@ -36,6 +37,7 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
+    Route::get('/users/{usu_id}/cont', [UsersController::class, 'editcont'])->name('users.cont');
 
 
     Route::resource('cursos',CursosController::class);
@@ -43,7 +45,16 @@ Route::middleware('auth')->group(function () {
 
 
     Route::get('/genera_ordenes',[GeneraOrdenesController::class, 'index'])->name('genera_ordenes.index');
+    Route::post('/generarOrdenes',[GeneraOrdenesController::class, 'generarOrdenes'])->name('generarOrdenes');
 
+
+    Route::post('/eliminarOrdenes',[GeneraOrdenesController::class, 'eliminarOrdenes'])->name('eliminarOrdenes');
+   
+   
+    Route::get('/genera_ordenes.show/{secuencial}',[GeneraOrdenesController::class, 'show'])->name('genera_ordenes.show');
+    
+    Route::get('/genera_ordenes.xls/{secuencial}',[GeneraOrdenesController::class, 'xls'])->name('genera_ordenes.xls');
+ 
 });
 
 require __DIR__.'/auth.php';

@@ -17,7 +17,6 @@ class UsersController extends Controller
         
       
         $users = DB::table('users as u')
-        ->join ('roles as r','u.rol_id','=','r.rol_id')
         ->select ('*')
         ->get(); 
 
@@ -64,15 +63,22 @@ class UsersController extends Controller
     public function edit(string $usu_id)
     {
      $user=User:: find($usu_id);
-     $roles= Roles:: all();
 
      return view('users.edit')  
      ->with('user',$user)
-     ->with('roles',$roles)
      ;
 
     }
 
+    public function editcont(string $usu_id)
+    {
+     $user=User:: find($usu_id);
+
+     return view('users.cont')  
+     ->with('user',$user)
+     ;
+
+    }
     /**
      * Update the specified resource in storage.
      */
